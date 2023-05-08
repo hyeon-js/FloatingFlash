@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -36,6 +37,7 @@ public class MainActivity extends Activity {
         TextView cp = new TextView(this);
         cp.setText("© 2023 Hyeon.js, All rights reserved.");
         cp.setTextSize(13);
+        cp.setGravity(Gravity.CENTER);
         int pad = dip2px(8);
         cp.setPadding(pad, pad, pad, pad);
         layout.addView(cp);
