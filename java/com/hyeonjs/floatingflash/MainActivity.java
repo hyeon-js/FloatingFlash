@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -32,7 +33,13 @@ public class MainActivity extends Activity {
             startActivity(new Intent(Intent.ACTION_VIEW, uri));
         });
         layout.addView(git);
-        int pad = dip2px(16);
+        TextView cp = new TextView(this);
+        cp.setText("© 2023 Hyeon.js, All rights reserved.");
+        cp.setTextSize(13);
+        int pad = dip2px(8);
+        cp.setPadding(pad, pad, pad, pad);
+        layout.addView(cp);
+        pad = dip2px(16);
         layout.setPadding(pad, pad, pad, pad);
         ScrollView scroll = new ScrollView(this);
         scroll.addView(layout);
