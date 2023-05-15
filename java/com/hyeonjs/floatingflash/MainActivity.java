@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+    private TextView btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +25,11 @@ public class MainActivity extends Activity {
         flash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (btn != null) {
 
+                } else {
+
+                }
             }
         });
         layout.addView(flash);
@@ -47,6 +53,8 @@ public class MainActivity extends Activity {
         scroll.addView(layout);
         setContentView(scroll);
     }
+
+
 
     private int dip2px(int dips) {
         return (int) Math.ceil(dips * this.getResources().getDisplayMetrics().density);
