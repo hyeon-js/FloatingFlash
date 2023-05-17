@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,14 @@ public class MainActivity extends Activity {
             }
         });
         layout.addView(flash);
+        Button per = new Button(this);
+        per.setText("다른 앱 위에 그리기 권한 설정");
+        per.setOnClickListener(view -> {
+            Uri uri = Uri.parse("package:" + getPackageName());
+            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, uri);
+            startActivityForResult(intent, 5469);
+        });
+        layout.addView(per);
         Button git = new Button(this);
         git.setText("개발자 홈페이지");
         git.setOnClickListener(view -> {
