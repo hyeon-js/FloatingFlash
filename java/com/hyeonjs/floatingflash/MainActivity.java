@@ -39,6 +39,7 @@ public class MainActivity extends Activity {
                 } else {
                     WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
                     if (btn != null) wm.removeView(btn);
+                    btn = null;
                 }
             }
         });
