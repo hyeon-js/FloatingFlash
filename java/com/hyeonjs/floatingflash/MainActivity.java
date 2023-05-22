@@ -31,16 +31,13 @@ public class MainActivity extends Activity {
         layout.setOrientation(1);
         Button flash = new Button(this);
         flash.setText("손전등 버튼 생성/삭제");
-        flash.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (btn == null) {
-                    createButton();
-                } else {
-                    WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
-                    if (btn != null) wm.removeView(btn);
-                    btn = null;
-                }
+        flash.setOnClickListener(view -> {
+            if (btn == null) {
+                createButton();
+            } else {
+                WindowManager wm = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+                if (btn != null) wm.removeView(btn);
+                btn = null;
             }
         });
         layout.addView(flash);
