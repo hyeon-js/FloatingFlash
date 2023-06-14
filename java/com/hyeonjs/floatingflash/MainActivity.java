@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    private TextView btn;
+    private static TextView btn;
     private boolean isFlashOn = false;
 
     @Override
